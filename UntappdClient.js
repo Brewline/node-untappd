@@ -299,6 +299,15 @@ var UntappdClient = function(debug) {
 		return get("/v4/brewery/info/" + data.BREWERY_ID, data, callback);
 	};
 
+	// https://twitter.com/gregavola/status/929484413011931136
+	that.breweryBeerList = function(callback, data) {
+		data = data || {}
+		validate(data.BREWERY_ID, "BREWERY_ID");
+		validate(callback, "callback");
+		authorized();
+		return get("/v4/brewery/" + data.BREWERY_ID + "/beer_list", data, callback);
+	};
+
 	// https://untappd.com/api/docs#beerinfo
 	that.beerInfo = function(callback, data) {
 		data = data || {}
