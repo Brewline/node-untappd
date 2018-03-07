@@ -305,7 +305,7 @@ var UntappdClient = function(debug) {
 		validate(data.BREWERY_ID, "BREWERY_ID");
 		validate(callback, "callback");
 		authorized();
-		return get("/v4/brewery/" + data.BREWERY_ID + "/beer_list", data, callback);
+		return get("/v4/brewery/beer_list/" + data.BREWERY_ID, data, callback);
 	};
 
 	// https://untappd.com/api/docs#beerinfo
